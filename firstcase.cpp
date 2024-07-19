@@ -22,6 +22,10 @@ int main() {
     std::cout << "Dividing by zero: ";
     std::cout << a / b << std::endl;  // 错误2：除以零
 
+     int arr[3] = {1, 2, 3};
+    std::cout << "Array out of bounds: " << arr[5] << std::endl;
+
+
     return 0;
 }
 
