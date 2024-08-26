@@ -2,6 +2,10 @@
 
 // 函数声明
 int addNumbers(int a, int b);
+int next_index(int i);
+
+// 计算数组的大小
+const int MAX_QUEUE_SIZE = 3;  // 定义一个常量，表示数组的最大大小
 
 int main() {
     int num1, num2, sum;
@@ -27,6 +31,11 @@ int main() {
     int arr[3] = {1, 2, 3};
     std::cout << "Array out of bounds: " << arr[5] << std::endl;  // 错误：数组越界访问
 
+    // 示例：使用 next_index 函数
+    int index = 2;  // 一个示例索引
+    int next = next_index(index);  // 计算下一个索引
+    std::cout << "Next index of " << index << " is " << next << std::endl;  // 显示结果
+
     return 0;
 }
 
@@ -34,3 +43,10 @@ int main() {
 int addNumbers(int a, int b) {
     return a + b;
 }
+
+// next_index 函数定义
+int next_index(int i) {
+    // 错误1: 当 i 为 MAX_QUEUE_SIZE - 1 时, next_index() 返回值为 MAX_QUEUE_SIZE, 超出有效范围
+    return (i + 1); // 错误: 可能导致超出数组范围
+}
+
